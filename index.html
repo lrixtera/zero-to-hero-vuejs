@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Document</title>
 </head>
 <body>
+ <div id="app">
+    <h1>Vue.js Components Fundamentals</h1>
+    <click-counter></click-counter>
     
-<script>
-  import  {ref} from 'vue'
-  const msg = ref ('Hello Blyad!')
-</script>
-<template>
-    <h1>{{msg}}</h1>
-    <input v-model="msg">
-</template>
-</html>
+ </div>
+ <script src="https://unpkg.com/vue@3"></script>
+<script src="app.js"></script>
 </body>
+</html>
