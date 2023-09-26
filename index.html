@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <script src="https://unpkg.com/vue@next"></script>
     <title>Document</title>
 </head>
@@ -11,6 +12,12 @@
     <h1>{{ title }}</h1>
     <p>{{ content}}</p>
     <a :target="linkInfo.target" :href="linkInfo.url" :alt="linkInfo.alt ">{{linkInfo.title}}</a>
+    <br>
+    <br>
+    <button v-on:click="changeTitle('Bu 1. buton')">Başlık değiştir.</button>
+    <button v-on:click="changeTitle('Bu 2. buton')">Başlık değiştir 2.</button>
+    <div @mousemove ="updateCoords('mouseMooove',$event)" class="box" @click="changeTitle('Box üzerinden gelen')"></div>
+    <span>{{coords.x}},{{coords.y}}</span>
  </div>
 <script src="app.js"></script>
 </body>
