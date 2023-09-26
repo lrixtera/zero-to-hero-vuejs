@@ -1,13 +1,16 @@
-Vue.createApp({
-
-})
-.component('click-counter', {
-       template: '<button @click="count++">{{count}}</button>',
+const app = Vue.createApp({
     data(){
         return{
-            count:1
-        }
-    }
-})
-
-.mount('#app')
+            title:"VueJS testing",
+            content:"Lorem ipsum dolor sit amet",
+            linkInfo:{
+                title:"Tıklayınız...",
+                target:"_blank",
+                url:"https://www.google.com",
+                alt:"link",
+                
+            },
+            
+        };
+    },
+}).mount("#app");
