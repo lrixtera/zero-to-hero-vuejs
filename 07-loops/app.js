@@ -18,10 +18,19 @@ const app = Vue.createApp({
                 text: event.target.value,
                 completed: false,
             });
-            
         },
         removeItem(todoItem){
             this.todoList =this.todoList.filter(todo=> todo !== todoItem)
+        },
+        
+        
+    },
+    computed: {
+        completedItemCount(){
+            return this.todoList.filter((t) => t.completed).length;
+        },
+        uncompletedItemCount(){
+            return this.todoList.filter((t) => !t.completed).length;
         },
     },
 }).mount("#app");

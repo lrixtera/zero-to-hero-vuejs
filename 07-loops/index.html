@@ -16,17 +16,23 @@
                 <div class="d-flex justify-content-start mb-4">
                     <input type="text" class="form-control me-2" @keydown.enter="addTodo">
                 </div>
-                <ul v-if="todoList.length > 0 "class="list-group">
-                    <li v-for="todo in todoList" :key="todo.id" class="list-group-item d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="checkbox" class="form-check-input" value="" v-model="todo.completed"id="`completed_checkbox${todo.id}`">
-                            <label for="`completed_checkbox${todo.id}`" class="form-check-label ms-2">{{todo.text}}</label>
-                        </div>
-                        <button class="btn btn-sm btn-danger" @click="removeItem(todo)">Sil</button>
-                    </li>
-                </ul>
+                <div v-if="todoList.length > 0 ">
+                    <ul class="list-group">
+                        <li v-for="todo in todoList" :key="todo.id" class="list-group-item d-flex justify-content-between align-items-center" :class="{'bg-danger': todo.completed, 'bg-warning': !todo.uncompleted}">
+                            <div>
+                                <input type="checkbox" class="form-check-input" value="" v-model="todo.completed"id="`completed_checkbox${todo.id}`">
+                                <label for="`completed_checkbox${todo.id}`" class="form-check-label ms-2">{{todo.text}}</label>
+                            </div>
+                            <button class="btn btn-sm btn-danger" @click="removeItem(todo)">Sil</button>
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-success">Tamamlanan todo sayısı: {{completedItemCount}}</small>
+                    <small class="text-danger">Tamamlanmamış todo sayısı: {{uncompletedItemCount}}</small>
+                    </div>
+                </div>
                 <div v-else class="alert alert-warning">Henüz eklenmiş bir todo bulunmamaktadır.</div>
-            </div>
+             </div>
             <div class="col-4">
                 <pre>
                     {{todoList}}
