@@ -75,44 +75,44 @@
 
 .justify-content-center {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .justify-content-start {
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .justify-content-between {
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .justify-content-end {
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .align-items-center {
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .align-items-start {
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .align-items-end {
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .mt-0 {
@@ -438,11 +438,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background-color: #e9ebee;
   padding: 10px;
 }
@@ -452,14 +452,14 @@ body #app {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  flex-direction: column;
+      flex-wrap: wrap;
+      flex-direction: column;
 }
 
 body #app .container {
@@ -467,11 +467,11 @@ body #app .container {
   width: 375px;
   margin: 5px;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border: 1px solid #d0d1d5;
   background-color: white;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   padding: 5px 10px;
 }
 
@@ -480,11 +480,11 @@ body #app .container-sm {
   max-width: 375px !important;
   margin: 5px;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border: 1px solid #d0d1d5;
   background-color: white;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   padding: 5px 10px;
 }
 
@@ -495,7 +495,7 @@ body #app select {
   width: 100%;
   margin: 5px 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -504,7 +504,7 @@ body #app button {
   border: none;
   padding: 5px 10px;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   margin: 3px 0;
   border-radius: 3px;
   background-color: #d7dbdd;
@@ -614,13 +614,7 @@ body #app ul li:hover {
 }
 
 body #app hr {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#59bacc),
-    to(#ffbc49)
-  );
+  background: -webkit-gradient(linear, left top, right top, from(#59bacc), to(#ffbc49));
   background: linear-gradient(to right, #59bacc, #ffbc49);
   height: 1px;
   border: none;
