@@ -9,6 +9,7 @@ export default {
 </script>
 
 <template>
+  <app-header/>
   <div class="container">
     <h3>Bu benim ilk Vue CLI uygulamam</h3>
     <p>Bugun component ve cli konularini goruyoruz</p>
@@ -16,6 +17,6 @@ export default {
   <counterItem></counterItem>
   <counter-item></counter-item>
   <counterItem/>
-  
+
 </template>
 
