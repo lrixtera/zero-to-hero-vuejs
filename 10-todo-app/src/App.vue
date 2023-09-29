@@ -3,43 +3,51 @@
     <h3 class="text-center">
       ToDo App
     </h3>
-    <hr/>
-    <input @keydown.enter="addItem" type="text" id="todoText" placeholder="Bir seyler yaziniz...">
-    <ul>
-      <li v-for="todoItem in todoList"
-      :key="todoItem.id"
-      class="d-flex justify-content-between align-items-center">
-      <span>{{ todoItem.text }} #{{ todoItem.id }}</span>
-      <button class="sm red" @click="deleteItem(todoItem)">Sil</button>
-      </li>
-      
-    </ul>
-    <small class="d-flex justify-content-end text-right green">{{ todoList.length }} tane todo var.</small>
+    <hr class="my-2" />
+    <AddSection :addItem="addItem" @addtodo="addItem" />
+    <TodoList @delete-todo-item="deleteItem" :myData="todoList" />
+    <ResultBar :itemCount="todoList.length" />
   </div>
 </template>
-<script>
-export default{
-  data(){
-    return{
-      todoList:[
-        {id: 1, text: "Bootcamp" },
-        {id: 2, text: "Bootcamp" },
-        {id: 3, text: "Bootcamp" },
-        {id: 4, text: "Bootcamp" },
-        {id: 5, text: "Bootcamp" },
-        {id: 6, text: "Bootcamp" },
+<script>  
+import AddSection from "@/components/AddSection.vue";
+import TodoList from "@/components/TodoList.vue";
+import ResultBar from "@/components/ResultBar.vue";
+export default {
+  components: {
+    AddSection,
+    TodoList,
+    ResultBar,
+  },
+  created(){
+    setTimeout(() => {
+      this.todoList = [
+        { id: 1, text: "Bootcamp" },
+        { id: 2, text: "Bootcamp" },
+        { id: 3, text: "Bootcamp" },
+        { id: 4, text: "Bootcamp" },
+        { id: 5, text: "Bootcamp" },
+        { id: 6, text: "Bootcamp" },
       ]
+    }, 2000);
+  },
+  data() {
+    return {
+      todoList: []
     }
-  },  
-  methods:{
-    deleteItem(todoItem){
+  },
+  methods: {
+    testEvent(data){
+      alert(data);
+    },
+    deleteItem(todoItem) {
       this.todoList = this.todoList.filter((t) => t !== todoItem)
     },
-    addItem(event){
-     this.todoList.push({
-      id: new Date().getTime(),
-      text: event.target.value
-     })
+    addItem(todo) {
+      this.todoList.push({
+        id: new Date().getTime(),
+        text: todo
+      })
     }
   }
 }
