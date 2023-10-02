@@ -1,23 +1,30 @@
 <template>
   <div class="container">
-    <UserSection :provideData="userList" @new-item="userList.push($event)"/>
-</div>
+    <UserSection />
+  </div>
 </template>
 <script>
 import UserSection from "@/components/UserSection"
 export default {
-  components:{
+  components: {
     UserSection,
   },
   data() {
     return {
-      provideData: ["Test1","Test2","Test3","Test4"]
+      provideData: { 
+        userList: ["Test1", "Test2", "Test3", "Test4"] }
     }
   },
-  provide(){
-        return{
-          userList: this.provideData.userList
-        }
+  provide() {
+    return {
+      userList: this.provideData.userList,
+      newItem: this.newItem
     }
+  },
+  methods:{
+    newItem(item){
+      this.provideData.userList.push(item)
+    }
+  }
 }
 </script>
