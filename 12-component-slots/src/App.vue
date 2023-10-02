@@ -1,5 +1,6 @@
 <template>
-  <MeinModal :onSave="onSave" :title="'ModalTitle'" :content="content"/>
+  <!-- <MeinModal :onSave="onSave" :title="'ModalTitle'" :content="content"/> -->
+  
 </template>
 
 <script>
